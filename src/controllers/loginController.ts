@@ -1,6 +1,5 @@
-// backend/controllers/loginController.ts
 import { Request, Response } from 'express';
-import { addUser, findUserByEmail, loginUser } from '../models/loginModel';
+import { addUser, findUserByEmail, loginUser, UserRole } from '../models/loginModel';
 
 function registerUser(req: Request, res: Response): void {
     const { email, username, password } = req.body;
@@ -10,7 +9,7 @@ function registerUser(req: Request, res: Response): void {
         return;
     }
 
-    addUser(email, username, password);
+    addUser(email, username, password, UserRole.MEMBER);
     res.json({ message: 'Inscription réussie' });
 }
 

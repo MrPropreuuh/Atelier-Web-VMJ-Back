@@ -1,4 +1,3 @@
-// backend/routes/loginRoutes.ts
 import { Router } from 'express';
 import { registerUser, authenticateUser } from '../controllers/loginController';
 
